@@ -1,0 +1,1168 @@
+:root {
+    /* Colors */
+    --babyBlue: #14A3C7;
+    --beigeSections: #D9CBBF;
+    --coffeeBrown: #594839;
+    --beigeIcons: #CDB693;
+    /* Spacing */
+
+
+}
+
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    box-sizing: border-box;
+    font-family: "Barlow", sans-serif;
+}
+main{
+    background-color: #F6F4F5;    
+}
+
+/* General button styling */
+.generalButtonStyling, .centeredButtonStyling {
+    color: white;
+    background-color: var(--babyBlue);
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 7rem;
+    height: 3rem;
+    border-radius: 6px;
+    cursor: pointer;
+    
+}
+.centeredButtonStylingWhite {
+    color: var(--babyBlue);
+    background-color: white;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 7rem;
+    height: 3rem;
+    border-radius: 6px;
+} 
+
+/* centreret knap */
+ .centeredButtonContainer {
+    text-decoration: none;
+    padding-top: 3rem;
+    display: grid;
+    grid-column: 2/3;
+    justify-content: center; 
+    align-items: center;      
+    padding-bottom: 2rem;
+}
+
+/* Generel text + image section */
+.textIntroSection {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 5rem;
+}
+.textIntroSection img {
+    width: 50%;
+}
+.textIntroSectionText p {
+    flex-direction: column;
+    color: #5D3D1D;
+}
+
+/* Nav */
+/* Hvid nav */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+.navbar button {
+    margin-left: 4rem;
+}
+nav ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    margin: 0 15px;
+} 
+.navbarItemsWhite ul li a, .headerLogo {
+    text-decoration: none;
+    color: white; 
+    transition: color 0.3s ease; 
+}
+
+/* Nav hover */
+.navbarItemsWhite ul li a:hover, .headerLogo:hover, .nav-ul-animal li a:hover, .headerLogo-animal:hover {
+    color: var(--babyBlue); 
+}
+
+/* Header og nav - hunde arkiv */
+.nav-ul-animal li a, .headerLogo-animal {
+    color: var(--coffeeBrown); 
+    transition: color 0.3s ease; 
+
+}
+.header-animal{
+    position: relative;
+    height: unset;
+    background-color: #F6F4F5;
+}
+.navbar-animal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+.headerLogo-animal{
+    flex: 1;
+    font-size: 40px;
+    text-decoration: none;
+    color: var(--coffeeBrown);
+}
+.nav-ul-animal{
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+}
+.nav-ul-animal li{
+    margin: 0 15px;
+}
+.nav-ul-animal li a{
+    color: var(--coffeeBrown);
+    text-decoration: none;
+}
+.navbar-animal button {
+    margin-left: 4rem;
+}
+
+/* Index hero */
+.indexHeader {
+    position: relative;
+    height: 100vh;
+}
+
+/* Hero Styling */
+.heroContent {
+    color: white;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%); 
+    text-align: left;
+    padding: 2rem;
+    max-width: 40%;
+}
+.heroContent h1 {
+    font-size: 70px;
+    margin: 0;
+}
+.heroContent p {
+    padding-bottom: 1rem;
+    font-size: 1.2rem;
+}
+.headerLogo {
+    flex: 1;
+    font-size: 40px;
+    text-decoration: none;
+    color: white;
+}
+.heroImage {
+    position: absolute;
+    object-fit: cover;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110vh;
+} 
+
+/* Small hero */
+.smallHeader {
+    position: relative;
+    height: 50vh;
+}
+
+/* Small hero content styling */
+.smallHeroContent {
+    color: white;
+    position: absolute;
+    z-index: 1;
+    top: 28%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center; 
+    padding: 2rem;
+    width: 100%; 
+}
+.smallHeroContent h1 {
+    font-size: 50px;
+    margin: 0;
+    text-transform: uppercase;
+}
+.heroImageSmall {
+    position: absolute;
+    object-fit: cover;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+}
+
+/* Footer */
+footer{
+    background-color: var(--coffeeBrown);
+    color: white;
+    padding: 1rem 1rem;
+}
+footer p{
+    margin: 4px;
+}
+.footer-header{
+    font-size: 2rem;
+}
+.footer-bottom-row{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 0.8rem;
+    padding-top: 1rem;
+}
+.footer-upper-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2rem 0 2rem 0;
+}
+.footer-bottom-row div{
+    display: flex;
+}
+.footer-icon{
+    font-size: 2rem;
+    padding: 0.5rem;
+}
+.footer-links-container{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+.footer-links a{
+    text-decoration: none;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+.footer-links{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer hover effekt */
+.footer-icon {
+    color: white; 
+    transition: color 0.3s ease;
+}
+.footer-icon:hover {
+    color: var(--babyBlue); 
+}
+
+.footer-links a {
+    color: white; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+}
+.footer-links a:hover {
+    color: var(--babyBlue); 
+}
+  
+
+
+/* ------------------------------------ styling enkelt-dyr-------------------------------------- */
+.animalPadding {
+    padding: 4rem 8rem;
+    padding-bottom: 0;
+}
+.breadcrumbs{
+    margin: 0 2rem;
+}
+.breadcrumbs a{
+    text-decoration: none;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--coffeeBrown);
+}
+.single-animal-header{
+    display: flex;
+    align-items: baseline;
+}
+.single-animal-header h1{
+    color: var(--coffeeBrown);
+    font-weight: 500;
+    margin-right: 1rem;
+    font-size: 4rem;
+}
+.header-icon{
+    color: var(--beigeIcons);
+    font-size: 3rem;
+}
+.single-animal-img{
+    width: 50%;
+}
+.single-animal-img img{
+    width: 100%;
+}
+.single-animal, .single-animal-under{
+    display: flex;
+    gap: 6rem;
+    margin-bottom: 4rem;
+}
+.single-animal-content{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.single-animal-data{
+    display: flex;
+    gap: 4rem;
+}
+.single-animal-data p{
+    margin-top: 1rem;
+    color: var(--coffeeBrown);
+    font-weight: 600;
+}
+.single-animal-data span{
+    margin-left: 1rem;
+    font-weight: 400;
+}
+.single-animal-description{
+    width: 50%;
+}
+ .single-animal-description p{
+    margin-bottom: 2rem;
+} 
+
+/*-----kalender--------*/
+.animal-meeting-book{
+    width: 50%;
+}
+.animal-h2{
+    color: var(--coffeeBrown);
+    font-weight: 500;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.calendar-header{
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+.days{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+#dates-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+#dates-grid div {
+    padding: 10px;
+    border-radius: 5px;
+}
+#dates-grid div:hover {
+    background-color: var(--babyBlue);
+    opacity: 20%;
+}
+.selected {
+    background-color: var(--babyBlue);
+    color: white;
+}
+.bottom-bar{
+    display: flex;
+    justify-content: space-between;
+}
+.selectedDate{
+    align-content: center;
+    background-color: #eee;
+    border: none;
+    width: 7rem;
+    height: 3rem;
+}
+
+.checkboxes{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    color: var(--coffeeBrown);
+}
+.checkboxes input{
+    position: absolute;
+    height: 0;
+    width: 0;
+}
+.checkbox-style{
+    position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  
+}
+.checkbox-container{
+    display: block;
+    position: relative;
+    padding-left: 2rem;
+    font-size: 1rem;
+    margin: 1rem 0 1rem 0; 
+}
+.checkbox-container input:checked ~ .checkbox-style {
+    background-color: var(--babyBlue);
+}
+.checkbox-style:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.checkbox-container input:checked ~ .checkbox-style:after {
+    display: block;
+}
+.checkbox-container .checkbox-style:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+  
+.calendar-section{
+    text-align: center;
+}
+.form-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.form-section p{
+    color: var(--coffeeBrown);
+    font-weight: 300;
+}
+.calendar-form-section{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+.calendar-form-section input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Index Page */
+/* Card Slider Sektion  */
+
+.cardSliderSection, .cardSliderSectionNoBackground{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    
+    display: flex;
+}
+.cardSliderSection{
+    background: var(--beigeSections);
+}
+.cardSliderSectionText {
+    padding: 2rem 5rem;
+    color: var(--coffeeBrown);
+    width: 50%;
+    text-align: center;
+} 
+.cardSliderSection-header, h2{
+    padding-bottom: 2rem;
+    font-size: 30px;
+    text-align: center;
+    color: var(--coffeeBrown);
+}
+.iconText i {
+    color: #CDB693;
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+
+/* dyrecards i slider */
+.singularAnimalCard{
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background: white;
+    color: #342716;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.3s ease;
+}
+.singularAnimalCard:hover, .singularBlogCard:hover{
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+}
+.singularAnimalCardImgDiv{
+    width: 100%;
+    height: 10rem;
+    object-fit: cover; 
+}
+.singularAnimalCardImage{
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    max-height: 12rem;
+    object-fit: cover; 
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* slider (Swiper Library)*/
+.swiper{
+    width: 90vw;
+}
+.swiper-pagination{
+    position: absolute;
+    margin-bottom: 5rem;
+}
+.swiper-pagination-bullet-active{
+    border-radius: 50%;
+    background-color: var(--babyBlue) !important;
+}
+.swiper-button-next, .swiper-button-prev {
+    padding: 4rem 1.5rem 2rem 1.5rem;
+
+}
+.swiper-button-next::after, .swiper-button-prev::after{
+    color: var(--babyBlue);
+  
+}
+  
+/* Animal Slider Section*/
+.buttonSlider {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--babyBlue);
+    font-size: 2rem;
+}
+.animalInfoCardButton {
+    background-color: var(--babyBlue);
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: fit-content; 
+    align-self: center; 
+    margin-bottom: 2rem;
+}
+.animalInfoCard {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.animalInfoCard h3 {
+    font-size: 25px;
+    background: var(--coffeeBrown);
+    color: white;
+    padding: 1rem; 
+} 
+.animalInfoCardSliderButton {
+    background-color: var(--babyBlue);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: fit-content; 
+    align-self: center; 
+    margin-bottom: 1.5rem;
+}
+.animalInfoMeta {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+
+/* Forside entrypoints */
+.indexEntryPointcontainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10vw;
+    width: 100%;
+    margin: 0 auto;
+    padding: 5rem;
+    height: 30rem;
+}
+.indexEntryPoint {
+    position: relative;
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out; 
+}
+.indexEntryImage {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out; 
+}
+.indexoverlayText {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 35%;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+    background: rgba(109, 101, 90, 0.40); 
+    transition: background 0.3s ease-in-out; 
+}
+.indexEntryText {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 10%;
+    transition: font-size 0.3s ease-in-out; 
+}
+/* Hover effect Entry Points*/
+.indexEntryPoint:hover .indexEntryImage {
+    transform: scale(1.20); 
+}
+
+.indexEntryPoint:hover .indexoverlayText {
+    background: rgba(109, 101, 90, 0.8);  
+}
+
+.indexEntryPoint:hover .indexEntryText {
+    font-size: 1.9rem; 
+}
+
+/* Blog Slider Section */
+.singularBlogCard {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1rem;
+    gap: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: white;
+    color: #342716;
+    text-decoration: none;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.blogCardContent{
+    min-height: 12rem;
+}
+
+.blogArkivGrid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 2rem; 
+    padding: 5rem;
+}
+
+.blogMainText {
+    padding-bottom: 1rem;
+}
+.singularBlogCard h3 {
+    padding-top: 1rem;
+}
+.singularBlogCard img {
+    border-radius: 50%; 
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover; 
+}
+.authorBlogCard {
+    display: flex;
+}
+.authorBlogCard div {
+    flex-direction: column;
+    padding: .7rem;
+}
+.authorBlogCard div p:nth-child(2) {
+    font-style: italic;
+}
+.ButtonStylingBlogPost{
+    color:white;
+    background-color: var(--babyBlue);
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 6px;
+}
+
+/* dyre arkiv */
+.singularAnimalCardArchive {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background: white;
+    color: #342716;
+    text-decoration: none;
+    max-height: 26rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.singularAnimalCardArchiveImg {
+    border-radius: 10px 10px 0 0;
+    max-width: 100%;
+    height: 10rem;
+    object-fit: cover; 
+}
+.animalInfoCardGridButton {
+    background-color: var(--babyBlue);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: fit-content; 
+    align-self: center; 
+    text-decoration: none;
+}
+.dyreArkivContainer {
+    display: grid;
+    grid-template-columns: 20% 80%; 
+    padding: 7rem 5rem 5rem 5rem;
+    width: 100%;
+}
+.dyreArkivGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem; 
+    margin-left: 5rem;
+}
+/* filter - dyre arkiv */
+/* Filter knapper */
+.filterButtonContainer{
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.filterButton {
+    color: var(--babyBlue);
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: uppercase;
+    width: 7rem;
+    height: 3rem;
+    border-radius: 6px;
+}
+.filterButton a{
+    text-decoration: none;
+}
+.filterButton a:visited{
+    color: var(--babyBlue);
+} 
+/* filter container */
+.arkivDyrfilter {
+    padding: 2rem;
+    background: var(--babyBlue);
+    border-radius: 10px;
+}
+.arkivDyrfilter h2 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 2rem;
+}
+.arkivFilterItem {
+    padding-bottom: 1rem;
+}
+.arkivFilterItem select {
+    width: 100%; 
+    display: block; 
+    padding: 0.5rem; 
+    border: 1px solid #ccc; 
+    border-radius: 8px;
+}
+.arkivFilterItem label {
+    color: white;
+}
+/* Kat/hund knap i filter*/
+.buttonCatDogContainer {
+    display: flex;
+    justify-content:center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.buttonCatDog {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: white; 
+    color: var(--babyBlue); 
+    font-size: 1.2rem; 
+    cursor: pointer;
+}
+.iconCircle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem; 
+    height: 4rem; 
+    border-radius: 50%; 
+    background-color: var(--babyBlue);
+    margin-bottom: 1rem; 
+}
+.iconCircle i {
+    color: white; 
+    font-size: 1.5rem; 
+}
+.buttonCatDog.active {
+    background-color: var(--babyBlue); 
+    color: white; 
+    border-color: var(--babyBlue); 
+}
+.buttonCatDog.active .iconCircle {
+    background-color: white; 
+}
+.buttonCatDog.active .iconCircle i {
+    color: var(--babyBlue) 
+}
+
+/* Adoptionsside */
+.adoptering-intro {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 80px 80px 0 80px;
+}
+.adoptering-intro img {
+    width: 50%;
+}
+.adoptering-intro-tekst p {
+    flex-direction: column;
+    color: #5D3D1D;
+}
+.adoptions-proces {
+    padding: 80px;
+    padding-top: 0;
+}
+.adoptions-proces-container {
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    margin-top: 2rem;
+}
+.adoptions-proces-container article,
+.adoptions-proces-container p,
+.adoptions-proces-container i,
+.adoptions-proces-container h4,
+.adoptions-proces-container p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.adoptions-proces-container p:first-child {
+    color: #14A3C7;
+    padding-right: 10rem;
+    font-size: 35px;
+}
+.adoptions-proces-container i {
+    font-size: 50px;
+    color: #5D3D1D;
+    background: white;
+    width: 1.6em;
+    text-align: center;
+    line-height: 1.6em;
+    border-radius: 50%;
+}
+.adoptions-proces-container h3 {
+    font-size: 20px;
+    color: var(--coffeeBrown);
+}
+.adoptions-proces-container p:last-child {
+    color: #5D3D1D;
+}
+.adoptions-proces-container h3,
+.adoptions-proces-container p:last-child {
+    margin-top: 1.5rem;
+}
+.adoptions-entry-points h2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+    color: #342716;
+}
+.adoption-cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+.adoptions-entry-points i {
+    color: #F6F4F5;
+    background: #14A3C7;
+    width: 1.6em;
+    text-align: center;
+    line-height: 1.6em;
+    border-radius: 50%;
+}
+.adoptions-entry-points a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    text-decoration: none;
+}
+.adoptions-entry-points button {
+    width: 245px;
+    height: 71px;
+    font-weight: 400;
+}
+
+
+/* Pensionside */
+.pension-ansattes-erfaring {
+    background: #D9CBBF;
+    margin: 0;
+    margin-top: 10rem;
+}
+.pension-ansattes-erfaring h2 {
+    display: flex;
+    justify-content: center;
+    color: #342716;
+    padding-top: 5rem;
+    margin-bottom: 5rem;
+}
+.erfaring-sektion {
+    background: #D9CBBF;
+    padding: 80px;
+    padding-bottom: 5rem;
+}
+.erfaring-sektion h2 {
+    color: #342716;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.erfaring-container {
+    display: flex;
+    gap: 15rem;
+    justify-content: center;
+    width: 100%;
+}
+.erfaring-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+.erfaring-card-header {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+}
+.erfaring-card-header i {
+    font-size: 50px;
+    color: #D3D3D3;
+    background: #F6F4F5;
+    width: 1.6em;
+    text-align: center;
+    line-height: 1.6em;
+    border-radius: 50%;
+}
+.erfaring-card-header h3 {
+    margin-top: 1.5rem;
+    color: #342716;
+}
+.erfaring-card-header h4 {
+    margin-top: 1rem;
+    font-weight: 400;
+    color: #342716;
+}
+.erfaring-card-body {
+    padding: 20px;
+    background-color: #594839;
+    color: white;
+    flex-grow: 1;
+}
+.erfaring-card-body h4,
+.erfaring-card-body hr,
+.erfaring-card-body ul,
+.erfaring-card-body li {
+    margin: 20px;
+}
+.erfaring-card-body h4 {
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+.erfaring-card-body hr {
+    border: none;
+    height: 2px;
+    background-color: white;
+    margin-bottom: 2rem;
+}
+.erfaring-card-body ul {
+    list-style: none;
+}
+.erfaring-card-body li {
+    margin-bottom: 1rem;
+}
+.erfaring-card-knap {
+    padding: 20px;
+    background-color: #5A4635;
+    text-align: center;
+}
+.erfaring-card-knap button {
+    background-color: white;
+    color: #1A4A3F;
+    border: none;
+    width: 275px;
+    height: 60px;
+    margin-bottom: 2rem;
+    border-radius: 15px;
+    font-weight: bold;
+}
+ 
+.priser-sektion h2 {
+    color: #342716;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+}
+.priser-container {
+    margin: 5rem;
+    margin-top: 2rem;
+    background: white;
+    border-radius: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.priser-indhold {
+    margin: 60px;
+}
+.priser-indhold h3 {
+    color: #342716;
+}
+.priser-indhold hr {
+    margin-top: 2rem;
+    border: none;
+    height: 2px;
+    background: #342716;
+}
+.emne-og-priser {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.emne-og-priser p {
+    color: #342716;
+}
+.priser-emne,
+.pension-priser {
+    margin-bottom: 3rem;
+}
+.priser-emne p,
+.pension-priser p {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+ 
+.pension-betingelser h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #342716;
+    font-weight: 400;
+    margin-top: 2rem;
+}
+.pension-betingelser a {
+    margin-left: 4px;
+}
+ 
+.pension-galleri-header {
+    padding: 20px;
+}
+.pension-galleri-header h2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    color: #342716;
+}
+.pension-galleri-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pension-galleri-sektion {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+} 
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    margin-bottom: 2rem;
+}
+.main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.small-images {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    max-width: 100%;
+}
+.small-images img {
+    height: 150px;
+    object-fit: cover;
+    flex-grow: 1;
+}
+
+
