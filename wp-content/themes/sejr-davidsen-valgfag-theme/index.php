@@ -163,7 +163,7 @@ get_header('index'); ?>
           <?php } wp_reset_postdata(); ?>
       </div>
     </div>
-          <a href="#" class="centeredButtonContainer">
+          <a href="<?php echo site_url('/blog') ?>" class="centeredButtonContainer">
             <button class="generalButtonStyling centeredButtonStylingWhite">
               ALLE BLOGS
             </button>

@@ -523,7 +523,7 @@ footer p{
     transition: box-shadow 0.3s ease;
 }
 .singularAnimalCard:hover, .singularBlogCard:hover{
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); 
 }
 .singularAnimalCardImgDiv{
     width: 100%;
@@ -543,6 +543,9 @@ footer p{
 /* slider (Swiper Library)*/
 .swiper{
     width: 90vw;
+}
+.swiper-wrapper{
+    padding: 1rem 0;
 }
 .swiper-pagination{
     position: absolute;
@@ -586,7 +589,7 @@ footer p{
     flex-direction: column;
     justify-content: space-between;
 }
-.animalInfoCard h3 {
+.animalInfoCard h3, .animalInfoCardArchive h3 {
     font-size: 25px;
     background: var(--coffeeBrown);
     color: white;
@@ -755,6 +758,11 @@ footer p{
     width: fit-content; 
     align-self: center; 
     text-decoration: none;
+}
+.animalInfoCardArchive {
+    font-size: 16px;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .dyreArkivContainer {
     display: grid;

@@ -152,7 +152,7 @@
                 $query->the_post(); ?>
                 <div class="singularAnimalCardArchive">
                     <img src="<?php echo get_the_post_thumbnail_url(null, 'large'); ?> " class="singularAnimalCardArchiveImg" />
-                    <div class="animalInfoCard">
+                    <div class="animalInfoCardArchive">
                         <h3><?php the_title(); ?></h3>
                         <div class="animalInfoMeta">
                             <div class="iconText">
@@ -168,9 +168,9 @@
                                 <p><?php the_field('kon'); ?></p>
                             </div>
                         </div>
-                        <!-- <button class="animalInfoCardGridButton"> -->
-                            <a  class="animalInfoCardGridButton" href="<?php the_permalink(); ?>">LÆS MERE</a>
-                        <!-- </button> -->
+                        
+                        <a  class="animalInfoCardGridButton" href="<?php the_permalink(); ?>">LÆS MERE</a>
+                       
                         
                     </div>
                 </div>

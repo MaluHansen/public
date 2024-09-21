@@ -23,7 +23,7 @@
             <li><a href="<?php echo site_url('/pension') ?>">Pension</a></li>
             <li><a href="#">Træning</a></li>
             <li><a href="#">Hvem er vi</a></li>
-            <li><a href="#">Blog & Tips</a></li>
+            <li><a href="<?php echo site_url('/blog') ?>">Blog & Tips</a></li>
             <li><a href="#">Indlever</a></li>
             <li><a href="#">Kontakt</a></li>
           </ul>
