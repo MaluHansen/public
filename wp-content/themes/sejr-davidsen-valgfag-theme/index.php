@@ -61,7 +61,7 @@ get_header('index'); ?>
           //laver et query med et array der holder på alle post der er af postype 'hund'
           $hunde = new WP_Query(array(
             'post_type' => 'hund',
-            'posts_per_page' => 4
+            'posts_per_page' => -1
           ));
               
           //alle posts af typen 'hund' skal vises på siden
