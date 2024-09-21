@@ -111,30 +111,30 @@
 
         <div class="dyreArkivGrid">
         <?php
-        // Define filter names
-        $filter_names = ['race', 'kon', 'allergivenlig', 'familievenlig', 'pelspleje', 'energi_niveau'];
+        // array med filternavne
+        $filter_navne = ['race', 'kon', 'allergivenlig', 'familievenlig', 'pelspleje', 'energi_niveau'];
 
-        // Check if any filters are applied
+        // checker om der er nogen filtre som passer den enkelte hund
         $has_filters = false;
-        foreach ($filter_names as $filter) {
+        foreach ($filter_navne as $filter) {
             if (isset($_GET[$filter])) {
                 $has_filters = true;
-                break; // Exit as soon as we find a set filter
+                break; //stopper når et filter bliver fundet
             }
         }
 
-        // Set up default query arguments
-        $args = array(
-            'post_type' => 'hund', // Adjust to your post type
-            'posts_per_page' => '6',
+        // laver et array med data om posttypen hund
+        $hundeData = array(
+            'post_type' => 'hund',
+            'posts_per_page' => '18',
             'meta_query' => array('relation' => 'AND'),
         );
 
         // If filters are applied, modify the query
         if ($has_filters) {
-            foreach ($filter_names as $filter) {
+            foreach ($filter_navne as $filter) {
                 if (isset($_GET[$filter]) && $_GET[$filter] !== 'alle') {
-                    $args['meta_query'][] = array(
+                    $hundeData['meta_query'][] = array(
                         'key' => $filter,
                         'value' => sanitize_text_field($_GET[$filter]),
                         'compare' => 'LIKE'
@@ -143,13 +143,12 @@
             }
         }
 
-        // Execute the query
-        $query = new WP_Query($args);
+        
+        $hunde = new WP_Query($hundeData);//laver et nye query og bruger hundedata som argument for data
 
-        // Display results
-        if ($query->have_posts()) {
-            while ($query->have_posts()) {
-                $query->the_post(); ?>
+        if ($hunde->have_posts()) {
+            while ($hunde->have_posts()) {
+                $hunde->the_post(); ?>
                 <div class="singularAnimalCardArchive">
                     <img src="<?php echo get_the_post_thumbnail_url(null, 'large'); ?> " class="singularAnimalCardArchiveImg" />
                     <div class="animalInfoCardArchive">
@@ -168,7 +167,6 @@
                                 <p><?php the_field('kon'); ?></p>
                             </div>
                         </div>
-                        
                         <a  class="animalInfoCardGridButton" href="<?php the_permalink(); ?>">LÆS MERE</a>
                        
                         
@@ -178,7 +176,7 @@
                 } else {
                     echo '<p>No results found.</p>';
                 }
-                wp_reset_postdata(); // Reset post data
+                wp_reset_postdata(); //efter at have loopet igennem alle
                 ?>
                 <a href="#" class="centeredButtonContainer">
             <button class="generalButtonStyling">INDLÆS FLERE</button>
