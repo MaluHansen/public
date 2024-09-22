@@ -3,7 +3,7 @@
 
 // Ny Swiper slider 
 var swiper = new Swiper(".mySwiper", {
-  // Viser 4 slides per slide
+  // Viser 4 cards per slide
   slidesPerView: 4,
   
   // Afstanden mellem cards 10px

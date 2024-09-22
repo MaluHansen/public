@@ -11,8 +11,7 @@ get_header('hund'); ?>
         <div class="single-animal-header">
           <h1><?php the_title();?></h1>
           <?php 
-            //skal vise køn symbol ved siden af navn, bruger acf til at se hvilket køn deer er valgt til den enkelte hund
-        
+            //skal vise køn symbol ved siden af navn, bruger acf til at se hvilket køn der er valgt til den enkelte hund
             $konSymbol = get_field('kon');
             if ($konSymbol == 'Han') {
             echo '<i class="fa-solid fa-mars header-icon"></i>';
@@ -43,7 +42,7 @@ get_header('hund'); ?>
             <p>Adoptions klar: 
               <span>
               <?php 
-              //skal kun vise den valgte acf dato hvis den er højere end den aktuelle dato og dermed ikke er klar til at blive adopteret, ellers vis ja
+              //skal kun vise den valgte acf dato hvis den er højere end den aktuelle dato og dermed ikke er klar til at blive adopteret, ellers vis 'ja'
               $datoIdag = date('Ymd');
               $adoptionsklar = get_field('adoptionsklar');
       

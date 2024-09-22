@@ -148,7 +148,7 @@
             'tax_query' => array()
         );
 
-        // If filters are applied, modify the query
+        //hvis et filter matcher skal tax/meta-query opdateres med den nye data
         if ($has_filters) {
             foreach ($filter_navne as $filter) {
                 if (isset($_GET[$filter]) && $_GET[$filter] !== 'alle') {
@@ -157,7 +157,7 @@
                         // Tilføj tax_query for racen
                         $hundeData['tax_query'][] = array(
                             'taxonomy' => 'race',
-                            'field'    => 'slug', // Brug 'slug' hvis du sender slug-værdier
+                            'field'    => 'slug',
                             'terms'    => sanitize_text_field($_GET[$filter]),
                         );
                     } else {

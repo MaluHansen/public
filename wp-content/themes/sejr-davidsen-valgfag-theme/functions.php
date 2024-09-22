@@ -19,9 +19,9 @@ add_action('wp_enqueue_scripts', 'sejrdavidsen_files');
 
 
 function custom_editor_dyr_title( $title, $post ) {
-    // Check if we are editing a custom post type
+    //hvis det er post typen hund der redigeres i skal title på postet ikke være 'add title' men 'navn på dyret'
     if( 'hund' === $post->post_type ) {
-        $title = 'Navn på dyret'; // Your custom placeholder text
+        $title = 'Navn på dyret';
     }
     return $title;
 }

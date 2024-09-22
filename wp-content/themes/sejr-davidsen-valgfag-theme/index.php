@@ -11,9 +11,9 @@ get_header('index'); ?>
     </p>
     <p>Vi glæder os til at byde dig og dit kæledyr velkommen!</p>
   </div>
-
+    <!-- henter url på en fil i temaet  -->
     <img
-      src="<?php echo get_theme_file_uri('/assets/img/heroIndexSejrDavidsen.jpg'); ?>"
+      src="<?php echo get_theme_file_uri('/assets/img/heroIndexSejrDavidsen.jpg'); ?>" 
       alt=""
       class="heroImage"
     />
@@ -58,7 +58,7 @@ get_header('index'); ?>
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
           <?php
-          //laver et query med et array der holder på alle post der er af postype 'hund'
+          //query der holder på alle post der er af postype 'hund', gemmes i variablen hunde
           $hunde = new WP_Query(array(
             'post_type' => 'hund',
             'posts_per_page' => -1
@@ -68,12 +68,15 @@ get_header('index'); ?>
           while ($hunde->have_posts()) {
           $hunde->the_post(); ?>
             <div class="swiper-slide singularAnimalCard">
+              <!-- henter det unikke billede der høre til hvert post -->
               <img src="<?php echo get_the_post_thumbnail_url(null, 'large'); ?> " class="singularAnimalCardImage" />
                 <div class="animalInfoCard">
                   <h3><?php the_title()?></h3>
                   <div class="animalInfoMeta">
                     <div class="iconText">
                       <i class="fa-solid fa-paw"></i>
+                      <!-- viser de 'terms' der er knyttet til postet hunde i taxonimien race
+                        der er kun en race til hver hund så derfor targeter vi index 0 i arrayet race og får vist navnet for den værdi-->
                       <p><?php echo (get_the_terms($hunde->ID, 'race')[0]->name); ?></p>
                     </div>
                     <div class="iconText">
@@ -88,6 +91,7 @@ get_header('index'); ?>
                   <a class="animalInfoCardButton" href="<?php the_permalink(); ?>">LÆS MERE</a>
               </div>
             </div>
+            <!-- efter loopet nulstilles den globale post data, så wp_query kun bruges i denne sektion-->
           <?php } wp_reset_postdata(); ?>
       </div>
     </div>
@@ -149,17 +153,21 @@ get_header('index'); ?>
               <div class="blogCardContent">
                 <h3><?php the_title() ?></h3>
                 <p class="blogMainText">
+                  <!-- en wordpress function som tager contented og viser de første 25 ord -->
                   <?php echo wp_trim_words(get_the_content(), 25);?>
                 </p>
               </div>
                 <div class="authorBlogCard">
-                  <?php echo get_avatar(get_current_user_id()); ?>
+                  <!-- henter id på den som har skrevet et opsalg og finder den profils profilbillede -->
+                  <?php $author = get_post_field('post_author', get_the_ID());
+                  echo get_avatar($author); ?>
                   <div>
                     <p><?php the_author() ?></p>
                     <p><?php echo get_the_date() ?></p>
                   </div>
                 </div>
             </div>
+            <!-- efter loopet nulstilles den globale post data -->
           <?php } wp_reset_postdata(); ?>
       </div>
     </div>
