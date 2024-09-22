@@ -58,42 +58,40 @@ get_header('small'); ?>
     </div>
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <?php
-        //laver et query med et array der holder på alle post der er af postype 'hund'
-        $hunde = new WP_Query(array(
-          'post_type' => 'hund',
-          'posts_per_page' => -1
-        ));
-        //alle posts af typen 'hund' skal vises på siden
-        while ($hunde->have_posts()) {
+          <?php
+          //laver et query med et array der holder på alle post der er af postype 'hund'
+          $hunde = new WP_Query(array(
+            'post_type' => 'hund',
+            'posts_per_page' => -1
+          ));
+              
+          //alle posts af typen 'hund' skal vises på siden
+          while ($hunde->have_posts()) {
           $hunde->the_post(); ?>
-          <div class="swiper-slide singularAnimalCard">
-          <img
-          src="<?php echo get_the_post_thumbnail_url(null, 'large'); ?> "
-          class="singularAnimalCardImage" />
-
-            <div class="animalInfoCard">
-              <h3><?php the_title()?></h3>
-              <div class="animalInfoMeta">
-                <div class="iconText">
-                  <i class="fa-solid fa-paw"></i>
-                  <p><?php the_field('race');?></p>
-                </div>
-                <div class="iconText">
-                  <i class="fas fa-birthday-cake"></i>
-                  <p><?php the_field('alder');?></p>
-                </div>
-                <div class="iconText">
-                  <i class="fa-solid fa-venus-mars"></i>
-                  <p><?php the_field('kon');?></p>
-                </div>
+            <div class="swiper-slide singularAnimalCard">
+              <img src="<?php echo get_the_post_thumbnail_url(null, 'large'); ?> " class="singularAnimalCardImage" />
+                <div class="animalInfoCard">
+                  <h3><?php the_title()?></h3>
+                  <div class="animalInfoMeta">
+                    <div class="iconText">
+                      <i class="fa-solid fa-paw"></i>
+                      <p><?php echo (get_the_terms($hunde->ID, 'race')[0]->name); ?></p>
+                    </div>
+                    <div class="iconText">
+                      <i class="fas fa-birthday-cake"></i>
+                      <p><?php the_field('alder');?></p>
+                    </div>
+                    <div class="iconText">
+                      <i class="fa-solid fa-venus-mars"></i>
+                      <p><?php the_field('kon');?></p>
+                    </div>
+                  </div>
+                  <a class="animalInfoCardButton" href="<?php the_permalink(); ?>">LÆS MERE</a>
               </div>
-              <a class="animalInfoCardButton" href="<?php the_permalink(); ?>">LÆS MERE</a>
             </div>
-          </div>
           <?php } wp_reset_postdata(); ?>
-        </div>
       </div>
+    </div>
     
 
       <a href="<?php echo site_url('/hund') ?>" class="centeredButtonContainer">
