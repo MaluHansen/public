@@ -74,7 +74,7 @@ get_header('index'); ?>
                   <div class="animalInfoMeta">
                     <div class="iconText">
                       <i class="fa-solid fa-paw"></i>
-                      <p><?php the_field('race');?></p>
+                      <p><?php echo (get_the_terms($hunde->ID, 'race')[0]->name); ?></p>
                     </div>
                     <div class="iconText">
                       <i class="fas fa-birthday-cake"></i>

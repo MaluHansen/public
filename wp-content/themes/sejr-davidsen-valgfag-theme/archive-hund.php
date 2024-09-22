@@ -32,14 +32,31 @@
                 <h2>Filtrer din søgning</h2>
                 <form id="filter-form" method="GET" action="<?php echo esc_url(home_url('/hunde')); ?>">
                     <div class="arkivFilterItem">
+                    <!-- race filteret skal være dynamisk og bruge en taxonimi istedte for at være et stykke tekst
+                     race filer knappen som brugeren ser skal også opdatere automatisk så man ikke skla ind og opdatere options i html
+                     hver gang der kommer en ny hund med en race som ikke findes i forvejen
+                     -->
                     <label for="race">Race</label>
                     <select id="select" name="race">
                         <option value="alle">Alle</option>
-                        <option value="bomuldshund">Bomuldshund</option>
-                        <option value="husky">Husky</option>
-                        <option value="golden retriever">Golden Retriever</option>
-                        <option value="border collie">Border Collie</option>  
+                        <?php
+                        // alle racerne fra taksonomien 'race' gemmes i racer
+                        $racer = get_terms(array(
+                            'taxonomy' => 'race',
+                        ));
+
+                        // loop igennem racer og for hver race skal der oprettes en ny option
+                        if ($racer) {
+                            foreach ($racer as $race) {
+                                //valuen af optionen skal være racens slug, som er angivet i taxonimien, det er forskelligt for hver race
+                                //det som skal vises i filteret er racens navn som er det som også er i taxonimien
+                                //punktummer her bruges til at sammenkæde sen statiske html (option tag) og mine variabler, uden dem kan php ikke vide at html og variable skal sættes sammen til et 
+                                echo '<option value="' . ($race->slug) . '">' . ($race->name) . '</option>';
+                            }
+                        }
+                        ?>
                     </select>
+
 
                     <label for="kon">Køn</label>
                     <select id="select" name="kon">
@@ -128,17 +145,29 @@
             'post_type' => 'hund',
             'posts_per_page' => '18',
             'meta_query' => array('relation' => 'AND'),
+            'tax_query' => array()
         );
 
         // If filters are applied, modify the query
         if ($has_filters) {
             foreach ($filter_navne as $filter) {
                 if (isset($_GET[$filter]) && $_GET[$filter] !== 'alle') {
-                    $hundeData['meta_query'][] = array(
-                        'key' => $filter,
-                        'value' => sanitize_text_field($_GET[$filter]),
-                        'compare' => 'LIKE'
-                    );
+                    
+                    if ($filter === 'race') {
+                        // Tilføj tax_query for racen
+                        $hundeData['tax_query'][] = array(
+                            'taxonomy' => 'race',
+                            'field'    => 'slug', // Brug 'slug' hvis du sender slug-værdier
+                            'terms'    => sanitize_text_field($_GET[$filter]),
+                        );
+                    } else {
+                        // Tilføj meta_query for de andre filtre
+                        $hundeData['meta_query'][] = array(
+                            'key'     => $filter,
+                            'value'   => sanitize_text_field($_GET[$filter]),
+                            'compare' => 'LIKE'
+                        );
+                    }
                 }
             }
         }
@@ -156,7 +185,7 @@
                         <div class="animalInfoMeta">
                             <div class="iconText">
                                 <i class="fa-solid fa-paw"></i>
-                                <p><?php the_field('race'); ?></p>
+                                <p><?php echo (get_the_terms($hunde->ID, 'race')[0]->name); ?></p>
                             </div>
                             <div class="iconText">
                                 <i class="fas fa-birthday-cake"></i>

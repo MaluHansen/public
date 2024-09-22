@@ -23,7 +23,19 @@ get_header('hund'); ?>
         </div>
         <div class="single-animal-data">
           <div id="col-left">
-            <p>Race: <span><?php the_field('race');?></span></p>
+            <p>Race: 
+            <span>
+              <?php 
+                $race = wp_get_post_terms(get_the_ID(), 'race'); //henter de taxonimier (race) som er knyttet til post typen med det id som er den aktuelle side
+                //wp_get_post_terms returnere altid et array med 'term' objekter med properties
+                if ($race) {
+                    echo $race[0]->name; //fordi $race er et array skal man bruge [0] for at tilgå den første 
+                    //name er en properti fra term objektert som er det navn på selve taxonomien som jeg gerne vil have vist på siden
+                 }
+              ?>
+            </span>
+
+            </p>
             <p>Alder: <span><?php the_field('alder');?></span></p>
             <p>Vægt: <span><?php the_field('vaegt');?></span></p>
             <p>Højde: <span><?php the_field('hojde');?></span></p>
@@ -122,6 +134,7 @@ get_header('hund'); ?>
         $hunde = new WP_Query(array(
           'post_type' => 'hund',
           'posts_per_page' => -1
+          
         ));
         //alle posts af typen 'hund' skal vises på siden
         while ($hunde->have_posts()) {
@@ -136,7 +149,7 @@ get_header('hund'); ?>
               <div class="animalInfoMeta">
                 <div class="iconText">
                   <i class="fa-solid fa-paw"></i>
-                  <p><?php the_field('race');?></p>
+                  <p><?php echo (get_the_terms($hunde->ID, 'race')[0]->name); ?></p>
                 </div>
                 <div class="iconText">
                   <i class="fas fa-birthday-cake"></i>
